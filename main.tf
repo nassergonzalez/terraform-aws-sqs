@@ -2,9 +2,6 @@
 # Queue
 ################################################################################
 
-locals {
-  name = try(trimsuffix(var.name, ".fifo"), "")
-}
 
 resource "aws_sqs_queue" "this" {
   count = var.create ? 1 : 0
