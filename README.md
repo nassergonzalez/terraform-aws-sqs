@@ -1,4 +1,4 @@
-# AWS SQS Terraform module
+# AWS SQS Terraform module trigger pr
 
 Terraform module which creates SQS resources on AWS 2.
 
