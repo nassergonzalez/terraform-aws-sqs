@@ -1,4 +1,4 @@
-# AWS SQS Terraform module trigger pr
+# AWS SQS Terraform module trigger pr. Change
 
 Terraform module which creates SQS resources on AWS 2.
 
