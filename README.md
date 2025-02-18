@@ -1,11 +1,3 @@
-# AWS SQS Terraform module trigger pr
-
-Terraform module which creates SQS resources on AWS 2.
-
-[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
-
-## Usage of the package
-
 ### FIFO Queue
 
 ```hcl
