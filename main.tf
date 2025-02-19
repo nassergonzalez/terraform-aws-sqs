@@ -1,7 +1,14 @@
+data "aws_region" "current" {}
+
+data "aws_caller_identity" "current" {}
+
 ################################################################################
 # Queue
 ################################################################################
 
+locals {
+  name = try(trimsuffix(var.name, ".fifo"), "")
+}
 
 resource "aws_sqs_queue" "this" {
   count = var.create ? 1 : 0
@@ -116,7 +123,7 @@ resource "aws_sqs_queue_redrive_policy" "dlq" {
 locals {
   stripped_dlq_name = try(trimsuffix(var.dlq_name, ".fifo"), "")
   inter_dlq_name    = try(coalesce(local.stripped_dlq_name, "${local.name}-dlq"), "")
-  dlq_name          = var.fifo_queue ? "${local.inter_dlq_name}.fifo" : local.inter_dlq_name
+  dlq_name          = var.fifo_queue && !var.use_name_prefix ? "${local.inter_dlq_name}.fifo" : local.inter_dlq_name
 
   dlq_kms_master_key_id       = try(coalesce(var.dlq_kms_master_key_id, var.kms_master_key_id), null)
   dlq_sqs_managed_sse_enabled = coalesce(var.dlq_sqs_managed_sse_enabled, var.sqs_managed_sse_enabled)
@@ -215,7 +222,7 @@ resource "aws_sqs_queue_redrive_allow_policy" "this" {
 }
 
 resource "aws_sqs_queue_redrive_allow_policy" "dlq" {
-  count = var.create && var.create_dlq ? 1 : 0
+  count = var.create && var.create_dlq && var.create_dlq_redrive_allow_policy ? 1 : 0
 
   queue_url = aws_sqs_queue.dlq[0].url
   redrive_allow_policy = jsonencode(merge(

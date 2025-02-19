@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.2.1](https://github.com/terraform-aws-modules/terraform-aws-sqs/compare/v4.2.0...v4.2.1) (2024-10-11)
+
+
+### Bug Fixes
+
+* Update CI workflow versions to latest ([#65](https://github.com/terraform-aws-modules/terraform-aws-sqs/issues/65)) ([62bbf21](https://github.com/terraform-aws-modules/terraform-aws-sqs/commit/62bbf21af92f39755aa864fda28b771328bcc5c5))
+
+## [4.2.0](https://github.com/terraform-aws-modules/terraform-aws-sqs/compare/v4.1.1...v4.2.0) (2024-04-26)
+
+
+### Features
+
+* Added queue_arn_static and dead_letter_queue_arn_static outputs ([#62](https://github.com/terraform-aws-modules/terraform-aws-sqs/issues/62)) ([cd54bb0](https://github.com/terraform-aws-modules/terraform-aws-sqs/commit/cd54bb0737280c6b3f93be5ca12d69906fa3a9f7))
+
+## [4.1.1](https://github.com/terraform-aws-modules/terraform-aws-sqs/compare/v4.1.0...v4.1.1) (2024-03-06)
+
+
+### Bug Fixes
+
+* Update CI workflow versions to remove deprecated runtime warnings ([#61](https://github.com/terraform-aws-modules/terraform-aws-sqs/issues/61)) ([1e2e703](https://github.com/terraform-aws-modules/terraform-aws-sqs/commit/1e2e7038e830ef60d1f3a53e1213db3b2f9c1d31))
+
+## [4.1.0](https://github.com/terraform-aws-modules/terraform-aws-sqs/compare/v4.0.2...v4.1.0) (2023-10-21)
+
+
+### Features
+
+* Add option to disable creation of redrive policy for the dead letter queue ([#60](https://github.com/terraform-aws-modules/terraform-aws-sqs/issues/60)) ([c4db9a6](https://github.com/terraform-aws-modules/terraform-aws-sqs/commit/c4db9a6864180a8b8cce2c28ad45798bc7e2a06a))
+
+### [4.0.2](https://github.com/terraform-aws-modules/terraform-aws-sqs/compare/v4.0.1...v4.0.2) (2023-07-18)
+
+
+### Bug Fixes
+
+* Disabled adding .fifo suffix to DLQ name if use_name_prefix ([#57](https://github.com/terraform-aws-modules/terraform-aws-sqs/issues/57)) ([c08f511](https://github.com/terraform-aws-modules/terraform-aws-sqs/commit/c08f51148163affe2657d091584a66612f2bd7c1))
+
 ### [4.0.1](https://github.com/terraform-aws-modules/terraform-aws-sqs/compare/v4.0.0...v4.0.1) (2023-01-19)
 
 
