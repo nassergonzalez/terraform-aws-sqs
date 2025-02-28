@@ -1,5 +1,8 @@
 # tests/sqs_test.tftest.hcl
 # Basic SQS queue test
+provider "aws" {
+  region = "us-east-1"
+}
 
 # Test variables
 variables {

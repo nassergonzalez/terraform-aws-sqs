@@ -1,6 +1,8 @@
 # tests/advanced_sqs_test.tftest.hcl
 # Advanced SQS queue tests
-
+provider "aws" {
+  region = "us-east-1"
+}
 # Test variables for all tests 
 variables {
   create                     = true
