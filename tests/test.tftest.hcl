@@ -1,5 +1,5 @@
 # tests/advanced_sqs_test.tftest.hcl
-# Advanced SQS queue tests
+# Advanced SQS queue tests for modules
 provider "aws" {
   region = "us-east-1"
 }
