@@ -1,6 +1,7 @@
 # AWS SQS Terraform module
 
 Terraform module which creates SQS resources on AWS.
+## Usage
 
 ## Usage
 
