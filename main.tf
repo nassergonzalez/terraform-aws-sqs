@@ -3,8 +3,10 @@ data "aws_region" "current" {}
 data "aws_caller_identity" "current" {}
 
 ################################################################################
-# Queue demo change
-################################################################################
+
+# Queue Demo
+
+
 
 locals {
   name = try(trimsuffix(var.name, ".fifo"), "")
