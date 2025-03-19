@@ -2,7 +2,7 @@
 
 Terraform module which creates SQS resources on AWS.
 
-## Usage 222
+## Usage
 
 ### FIFO Queue
 
