@@ -1,6 +1,6 @@
 # Upgrade from v3.x to v4.x
 
-If you have any questions regarding this upgrade process, please consult the [`examples`](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/complete) directory:
+If you have any questions or concerns regarding this upgrade process, please consult the [`examples`](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/complete) directory:
 
 If you find a bug, please open an issue with supporting configuration to reproduce.
 
