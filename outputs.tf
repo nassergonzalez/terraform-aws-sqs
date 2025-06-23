@@ -55,3 +55,17 @@ output "dead_letter_queue_name" {
   description = "The name of the SQS queue"
   value       = try(aws_sqs_queue.dlq[0].name, null)
 }
+
+################################################################################
+# Tags
+################################################################################
+
+output "queue_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = try(aws_sqs_queue.this[0].tags, null)
+}
+
+output "dead_letter_queue_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = try(aws_sqs_queue.dlq[0].tags, null)
+}

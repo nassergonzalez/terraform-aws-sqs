@@ -30,7 +30,9 @@ resource "aws_sqs_queue" "this" {
   sqs_managed_sse_enabled           = var.kms_master_key_id != null ? null : var.sqs_managed_sse_enabled
   visibility_timeout_seconds        = var.visibility_timeout_seconds
 
-  tags = var.tags
+  tags = merge(var.tags, {
+    "created_by_harness" = "true"
+  })
 }
 
 ################################################################################
@@ -150,7 +152,9 @@ resource "aws_sqs_queue" "dlq" {
   sqs_managed_sse_enabled           = local.dlq_kms_master_key_id != null ? null : local.dlq_sqs_managed_sse_enabled
   visibility_timeout_seconds        = try(coalesce(var.dlq_visibility_timeout_seconds, var.visibility_timeout_seconds), null)
 
-  tags = merge(var.tags, var.dlq_tags)
+  tags = merge(var.tags, var.dlq_tags, {
+    "created_by_harness" = "true"
+  })
 }
 
 ################################################################################

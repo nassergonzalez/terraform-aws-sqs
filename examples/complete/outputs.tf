@@ -39,6 +39,16 @@ output "default_sqs_dlq_name" {
   value       = module.default_sqs.dead_letter_queue_name
 }
 
+output "default_sqs_queue_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = module.default_sqs.queue_tags
+}
+
+output "default_sqs_dlq_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = module.default_sqs.dead_letter_queue_tags
+}
+
 # FIFO
 output "fifo_sqs_queue_id" {
   description = "The URL for the created Amazon SQS queue"
@@ -78,6 +88,16 @@ output "fifo_sqs_dlq_url" {
 output "fifo_sqs_dlq_name" {
   description = "The name of the SQS queue"
   value       = module.fifo_sqs.dead_letter_queue_name
+}
+
+output "fifo_sqs_queue_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = module.fifo_sqs.queue_tags
+}
+
+output "fifo_sqs_dlq_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = module.fifo_sqs.dead_letter_queue_tags
 }
 
 # Unencrypted
