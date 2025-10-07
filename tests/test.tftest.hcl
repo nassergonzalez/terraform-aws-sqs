@@ -39,6 +39,11 @@ run "fifo_with_deduplication" {
   }
 
   assert {
+    condition     = aws_sqs_queue.this[0].tags["created_by_harness"] == "true"
+    error_message = "created_by_harness tag is not properly set"
+  }
+
+  assert {
     condition     = var.content_based_deduplication == true
     error_message = "Content-based deduplication is not enabled"
   }

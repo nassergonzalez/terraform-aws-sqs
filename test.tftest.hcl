@@ -59,6 +59,11 @@ run "create_standard_queue" {
     condition     = aws_sqs_queue.this[0].tags["Environment"] == "test"
     error_message = "Environment tag is not properly set"
   }
+
+  assert {
+    condition     = aws_sqs_queue.this[0].tags["created_by_harness"] == "true"
+    error_message = "created_by_harness tag is not properly set"
+  }
 }
 
 # FIFO queue test
@@ -81,6 +86,12 @@ run "create_fifo_queue" {
   assert {
     condition     = endswith(aws_sqs_queue.this[0].name, ".fifo")
     error_message = "FIFO queue name does not end with .fifo suffix"
+  }
+
+  # Check for harness tag
+  assert {
+    condition     = aws_sqs_queue.this[0].tags["created_by_harness"] == "true"
+    error_message = "created_by_harness tag is not properly set"
   }
 }
 

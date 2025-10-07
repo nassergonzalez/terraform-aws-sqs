@@ -2,7 +2,7 @@
 # Queue
 ################################################################################
 
-output "queue_id" {
+output "queue_i\d" {
   description = "The URL for the created Amazon SQS queue"
   value       = try(aws_sqs_queue.this[0].id, null)
 }
@@ -54,4 +54,18 @@ output "dead_letter_queue_url" {
 output "dead_letter_queue_name" {
   description = "The name of the SQS queue"
   value       = try(aws_sqs_queue.dlq[0].name, null)
+}
+
+################################################################################
+# Tags
+################################################################################
+
+output "queue_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = try(aws_sqs_queue.this[0].tags, null)
+}
+
+output "dead_letter_queue_tags" {
+  description = "A mapping of tags to assign to the resource."
+  value       = try(aws_sqs_queue.dlq[0].tags, null)
 }
