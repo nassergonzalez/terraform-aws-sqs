@@ -2,7 +2,7 @@
 # Queue
 ################################################################################
 
-output "queue_i\d" {
+output "queue_id" {
   description = "The URL for the created Amazon SQS queue"
   value       = try(aws_sqs_queue.this[0].id, null)
 }
